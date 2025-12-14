@@ -5,7 +5,7 @@ RSGCore.Functions.CreateUseableItem("lion", function(source, item)
     if not Player then return end
 
     TriggerClientEvent('rsg-sanctuary:client:openAnimalMenu', source)
-    Player.Functions.RemoveItem("lion", 0)
+    Player.Functions.RemoveItem("lion", 1)
 end)
 
 RegisterNetEvent('rsg-sanctuary:server:returnAnimalItem', function()
@@ -13,7 +13,7 @@ RegisterNetEvent('rsg-sanctuary:server:returnAnimalItem', function()
     local Player = RSGCore.Functions.GetPlayer(src)
     if not Player then return end
 
-    Player.Functions.AddItem("lion", 0)
+    Player.Functions.AddItem("lion", 1)
     TriggerClientEvent('rsg-inventory:client:ItemBox', src, RSGCore.Shared.Items["lion"], "add")
 end)
 
